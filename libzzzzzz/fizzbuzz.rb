@@ -1,2 +1,2 @@
-def fizzbuzz
-end 
+def fizzbuzz (number)
+end
