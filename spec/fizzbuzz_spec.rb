@@ -12,14 +12,24 @@ describe 'fizzbuzz' do
     expect(fizzbuzz(test_input)).to eq 'fizz'
   end
 
-  # it 'returns "fizzbuzz" when a multiple of 15 is passed' do
-  #   # generate multiple of 15
-  #   # check this is .to eq 15
-  # end
-  #
-  # it 'returns "buzz" when a multiple of 5 that isn\'t a multiple of 3 is passed' do
-  #
-  # end
+  it 'returns "fizzbuzz" when a multiple of 15 is passed' do
+    # generate multiple of 15
+    test_input_15 = (rand(6) + 1) * 15
+    # check this is .to eq 15
+    expect(fizzbuzz(test_input_15)).to eq 'fizzbuzz'
+  end
+  
+  it 'returns "buzz" when a multiple of 5 that isn\'t a multiple of 3 is passed' do
+    # Generate a random multiple of 5
+    test_input_5 = (rand(6) + 1) * 5
+
+    # For this multiple of 5, run the test
+    while true do
+      break if test_input_5 % 15 != 0
+      test_input_5 = (rand(6) + 1) * 5
+    end
+    expect(fizzbuzz(test_input_5)).to eq 'buzz'
+  end
   #
   # it 'returns the number when passed a number that isn\'t a multiple of 3 or 5' do
 # end
